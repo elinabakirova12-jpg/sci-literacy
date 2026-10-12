@@ -1,0 +1,202 @@
+/* Базовые настройки для всего сайта */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f3f4f6;
+    color: #1f2937;
+    line-height: 1.5;
+}
+
+/* Красивая шапка с сине-фиолетовым градиентом */
+.main-header {
+    background: linear-gradient(135deg, #1d4ed8, #4338ca);
+    color: #ffffff;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.main-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.main-header p {
+    color: #e0e7ff;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Закрепленное мобильное меню */
+.tab-navigation {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px border #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+/* Стильные кнопки вкладок */
+.tab-btn {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: #6b7280;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 1rem 0.5rem;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+}
+
+.tab-btn:hover {
+    color: #4f46e5;
+}
+
+/* Стиль для активной нажатой кнопки */
+.tab-btn.active {
+    border-bottom-color: #4f46e5;
+    color: #4f46e5;
+    background-color: #f5f3ff;
+    font-weight: 700;
+}
+
+/* Контейнер для карточек */
+.content-container {
+    max-w-width: 48rem;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+/* Красивые белые карточки с мягкими тенями */
+.info-card {
+    background-color: #ffffff;
+    border: 1px solid #f3f4f6;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.info-card h2 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.card-subtitle {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.text-indigo { color: #4f46e5; }
+.text-emerald { color: #059669; }
+.text-red { color: #dc2626; }
+.text-blue { color: #2563eb; }
+
+/* Формулы и списки */
+.formula-block {
+    background-color: #f5f3ff;
+    color: #1e1b4b;
+    font-family: monospace;
+    font-size: 0.85rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    margin: 0.75rem 0;
+}
+
+.guidelines-list {
+    background-color: #f9fafb;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    color: #374151;
+}
+
+.guidelines-list p {
+    margin-bottom: 0.25rem;
+}
+
+/* Блок предупреждения для Белого списка */
+.warning-box {
+    background-color: #fef2f2;
+    border-left: 4px solid #ef4444;
+    color: #450a0a;
+    padding: 0.75rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+/* Сетка для примера с химиками */
+.chemists-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .chemists-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.chemist-item {
+    background-color: #f9fafb;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+}
+
+.chemist-item.active {
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+}
+
+/* Анимация появления */
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Делаем плашки заголовков кликабельными */
+.clickable-header {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.clickable-header:hover {
+    background-color: #f8fafc;
+}
+
+/* Скрытый по умолчанию блок с подробностями */
+.details-content {
+    display: none;
+}
+
+/* Класс, который JS будет добавлять для показа текста */
+.details-content.show {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
