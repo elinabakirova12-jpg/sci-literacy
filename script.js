@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const contentArea = document.getElementById("content-area");
     const btnTheory = document.getElementById("btn-theory");
     const btnDetective = document.getElementById("btn-detective");
-    const btnPubchem = document.getElementById("btn-pubchem");
+    const btnAbstract = document.getElementById("btn-abstract");
 
-    // Блок 1. Содержимое вкладки "Теория"
+    // Блок 1. Содержимое вкладки "Пара 1: Теория"
     const theoryHTML = `
         <div class="fade-in space-y-4">
             <p style="font-size: 0.85rem; color: #6b7280; font-style: italic; text-align: center; margin-bottom: 0.5rem;">
@@ -73,13 +73,13 @@ document.addEventListener("DOMContentLoaded", () => {
                         В РФ Высшая аттестационная комиссия (<strong>ВАК</strong>) жестко регулирует список журналов, публикации в которых признаются при защите диссертаций. Все они разделены на три лиги:
                     </p>
                     <div class="guidelines-list" style="margin-bottom: 0.5rem;">
-                        <p>• <strong>К1 (Высшая лига):</strong> Лучшие academic издания России со строжайшим рецензированием.</p>
+                        <p>• <strong>К1 (Высшая лига):</strong> Лучшие академические издания России со строжайшим рецензированием.</p>
                         <p style="margin-top: 0.25rem;">• <strong>К2 и К3:</strong> Профильные и развивающиеся издания среднего и начального уровня.</p>
                     </div>
                     <div class="warning-box">
                         <strong>⭐️ Что такое «Белый список»?</strong><br>
                         Это единый государственный реестр надежных научных журналов, созданный Министерством науки и высшего образования РФ.<br>
-                        🔗 <strong>Официальный сайт:</strong> <a href="https://journalrank.rcsi.science/ru/" target="_blank" style="color: #b91c1c; font-weight: bold; text-decoration: underline;">journalrank.rcsi.science («Белый список»)</a>
+                        🔗 <strong>Официальный сайт:</strong> <a href="https://rcsi.science" target="_blank" style="color: #b91c1c; font-weight: bold; text-decoration: underline;">journalrank.rcsi.science («Белый список»)</a>
                     </div>
                 </div>
             </div>
@@ -105,7 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 </div>
             </div>
-
             <!-- 5. eLIBRARY -->
             <div class="info-card" style="padding: 0; overflow: hidden;">
                 <div class="clickable-header" onclick="toggleDetails('details-elibrary')" style="padding: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
@@ -125,147 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <strong>📊 Какую информацию можно извлечь со смартфона:</strong><br>
                         • <strong>О журнале:</strong> Входит ли в ВАК (К1–К3), Ядро РИНЦ или «Белый список», его текущий импакт-фактор.<br>
                         • <strong>О статье:</strong> Полный текст или аннотацию, список использованной литературы и точное число её цитирований другими авторами.<br>
-                        • <strong>Об авторе:</strong> Его место работы (институт), полный список публикаций и индекс Хирша исследователя.
+                        • <strong>Об авторе:</strong> Его место работы (институт), полный список публикаций и личный индекс Хирша.
                     </div>
                 </div>
             </div>
-
-            <!-- 6. Google Scholar -->
-            <div class="info-card" style="padding: 0; overflow: hidden;">
-                <div class="clickable-header" onclick="toggleDetails('details-scholar')" style="padding: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
-                    <h2 style="margin: 0; border: none; padding: 0;">🌐 Поисковая система Google Scholar</h2>
-                    <span style="color: #059669; font-weight: bold; font-size: 0.85rem;">Развернуть ➔</span>
-                </div>
-                <div id="details-scholar" class="details-content" style="padding: 0 1.25rem 1.25rem 1.25rem; border-top: 1px dashed #e5e7eb;">
-                    <p class="card-subtitle text-emerald" style="margin-top: 0.5rem;">Мировой радар научной периодики</p>
-                    <p style="font-size: 0.875rem; color: #4b5563; margin-bottom: 0.5rem;">
-                        <strong>Google Scholar (Гугл Академия)</strong> — бесплатный поисковик, индексирующий полные тексты рецензируемых статей, диссертаций, книг и патентов крупнейших научных издательств планеты.<br>
-                        🔗 <strong>Официальный сайт:</strong> <a href="https://google.com" target="_blank" style="color: #059669; font-weight: bold; text-decoration: underline;">://google.com</a>
-                    </p>
-                    <div class="guidelines-list" style="margin-bottom: 0.5rem;">
-                        <p>🔍 <strong>Как искать:</strong> Введите ключевые слова на английском (например: <em>"polyvinyl alcohol electrospinning"</em>). Система автоматически отсечет блоги и Википедию, выдав только строгие научные труды.</p>
-                    </div>
-                    <div class="warning-box" style="background-color: #ecfdf5; border-left-color: #10b981; color: #064e3b;">
-                        <strong>📱 Главный лайфхак для смартфона:</strong><br>
-                        Под карточкой каждой статьи найдите ссылку <strong>«Цитируется по...»</strong>. Кликнув на нее пальцем на экране телефона, вы мгновенно развернете цепочку всех свежих мировых публикаций, которые сослались на эту работу.
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
-    // Блок 2. Содержимое вкладки "Детектив"
-    const detectiveHTML = `
-        <div class="fade-in">
-            <div class="info-card">
-                <h2>🕵️‍♂️ Практикум: Химический детектив</h2>
-                <p class="card-subtitle text-indigo">Верификация новостей со смартфона</p>
-                <p style="font-size: 0.875rem; color: #4b5563; margin-bottom: 0.75rem;">
-                    Журналисты часто искажают химические факты ради громких заголовков. Проведите расследование прямо с экрана телефона.
-                </p>
-                <div class="guidelines-list">
-                    <p><strong>1. Поиск оригинала:</strong> Возьмите выданную новость из СМИ, переведите ключевые слова на английский и найдите исходную научную статью в <strong>Google Scholar</strong>.</p>
-                    <p style="margin-top: 0.5rem;"><strong>2. Проверка журнала:</strong> Скопируйте название журнала и вбейте его на мобильной версии сайта <strong>SCImago Journal Rank (SJR)</strong>.</p>
-                    <p style="margin-top: 0.5rem;"><strong>3. Поиск квартиля:</strong> Прокрутите вниз до таблицы. Определите цвет за последний год (🟩 Q1, 🟨 Q2, 🟧 Q3, 🟥 Q4).</p>
-                    <p style="margin-top: 0.5rem;"><strong>4. Вердикт:</strong> Сравните реальные выводы авторов статьи с заявлениями прессы. Напишите в рабочий чат, соврали ли журналисты.</p>
-                </div>
-            </div>
-
-            <div class="info-card">
-                <h2>📑 Аналитический кейс: Слепой реферат</h2>
-                <p class="card-subtitle text-blue">Работа с англоязычной периодикой</p>
-                <p style="font-size: 0.875rem; color: #4b5563; margin-bottom: 0.5rem;">
-                    Изучите аннотации двух найденных статей уровня Q1/Q2 по вашей индивидуальной теме. Сформируйте в заметках телефона краткую записку на русском языке (5–7 предложений).
-                </p>
-                <div style="background-color: #f5f3ff; padding: 0.75rem; border-radius: 0.5rem; font-size: 0.75rem; color: #1e1b4b; line-height: 1.4;">
-                    <strong>Что обязательно должно быть в записке:</strong><br>
-                    • Какую конкретно фундаментальную проблему решали авторы?<br>
-                    • Какой метод исследования или синтеза полимеров/материалов был выбран?<br>
-                    • Каков главный практический результат работы?
-                </div>
-            </div>
-        </div>
-    `;
-
-    // Блок 3. Содержимое вкладки "PubChem"
-    const pubchemHTML = `
-        <div class="fade-in">
-            <div class="info-card">
-                <h2>🧬 Мобильный тренажер: PubChem</h2>
-                <p class="card-subtitle text-emerald">Навигация по хемоинформационным ресурсам</p>
-                <p style="font-size: 0.875rem; color: #4b5563; margin-bottom: 0.5rem;">
-                    Мы не используем тяжелый софт для ПК (ChemDraw/MarvinSketch). Вся аналитика идет через крупнейшую базу данных PubChem прямо в мобильном браузере.
-                </p>
-                <div class="guidelines-list">
-                    <p style="font-weight: bold; color: #4b5563; margin-bottom: 0.25rem;">КЛЮЧЕВЫЕ ДЕСКРИПТОРЫ МОЛЕКУЛЫ ДЛЯ АНАЛИЗА:</p>
-                    <p>• <strong>Molecular Weight:</strong> Точная молекулярная масса соединения (г/моль).</p>
-                    <p style="margin-top: 0.25rem;">• <strong>LogP:</strong> Коэффициент распределения (оценка гидрофобности, растворимости и способности проникать сквозь мембраны).</p>
-                    <p style="margin-top: 0.25rem;">• <strong>TPSA:</strong> Топологическая полярная поверхность молекулы, определяющая её биодоступность.</p>
-                </div>
-            </div>
-
-            <div class="info-card">
-                <h2>💳 Практическая работа: Цифровой паспорт молекулы</h2>
-                <p class="card-subtitle text-red">Регламент генерации отчета со смартфона</p>
-                <p style="font-size: 0.875rem; color: #4b5563; margin-bottom: 0.5rem;">
-                    Найдите выданную вам молекулу в PubChem, соберите физико-химические константы и отправьте заполненный паспорт через итоговую Google-форму.
-                </p>
-                <div style="background-color: #fef2f2; padding: 0.75rem; border-radius: 0.5rem; font-size: 0.75rem; color: #450a0a; line-height: 1.4;">
-                    <strong>Обязательная структура паспорта:</strong><br>
-                    1. Название вещества + систематическое имя по IUPAC.<br>
-                    2. Брутто-формула.<br>
-                    3. Физико-химический блок (Вес, LogP, TPSA).<br>
-                    4. Проверка «правила пяти» Липинского для лекарств.<br>
-                    5. Скриншот трехмерной (3D) модели молекулы с экрана смартфона.
-                </div>
-            </div>
-        </div>
-    `;
-
-    // Функция сброса активных классов с кнопок меню
-    function resetTabs() {
-        btnTheory.classList.remove("active");
-        btnDetective.classList.remove("active");
-        btnPubchem.classList.remove("active");
-    }
-
-    // Слушатели кликов по вкладкам
-    btnTheory.addEventListener("click", () => {
-        resetTabs();
-        btnTheory.classList.add("active");
-        contentArea.innerHTML = theoryHTML;
-    });
-
-    btnDetective.addEventListener("click", () => {
-        resetTabs();
-        btnDetective.classList.add("active");
-        contentArea.innerHTML = detectiveHTML;
-    });
-
-    btnPubchem.addEventListener("click", () => {
-        resetTabs();
-        btnPubchem.classList.add("active");
-        contentArea.innerHTML = pubchemHTML;
-    });
-
-    // По умолчанию открываем вкладку Теория при первой загрузке
-    btnTheory.click();
-});
-
-// Глобальная функция для раскрытия и скрытия блоков (аккордеон)
-function toggleDetails(elementId) {
-    const detailsBlock = document.getElementById(elementId);
-    if (detailsBlock) {
-        detailsBlock.classList.toggle("show");
-        
-        // Меняем текст стрелочки на кнопке
-        const headerBlock = detailsBlock.previousElementSibling;
-        const arrow = headerBlock.querySelector("span");
-        if (arrow) {
-            if (detailsBlock.classList.contains("show")) {
-                arrow.innerText = "Свернуть ▴";
-            } else {
-                arrow.innerText = "Развернуть ➔";
-            }
-        }
-    }
-}
